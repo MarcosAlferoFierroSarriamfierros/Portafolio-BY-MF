@@ -1,5 +1,6 @@
-# Mechatronic Engineering — Industrial Portfolio
-## Week 1: Feedback Control & PID Design | Mechatronics Engineering · Universidad Nacional de Colombia
+# Marcos Fierro: Universidad Nacional de Colombia's Mechatronic Engineer 
+# Industrial Portfolio
+## Week 1: Feedback Control & PID Design   
 
 ## Overview
 This repository documents hands-on control systems design exercises developed during Week 1 (18/05/2026) of a structured industrial engineering portfolio (for now)
@@ -14,11 +15,11 @@ Control and Automation Engineer, Robotics Systems Engineer, Mechatronics Systems
 | Exercise | System | Method | Key Result |
 |---|---|---|---|
 | Day 1 | Block diagram algebra | `feedback()`, `series()`, `pzmap()` | Closed-loop TF verified analytically and numerically |
-| Day 2 | Pitch angle dynamics (aircraft) | 2nd-order approximation validity | Approximation **invalid** — zero at −0.435 only 3.84× from dominant poles (threshold: 5×) |
-| Day 2 | Active suspension — F1 context | `stepinfo()`, damping analysis | ζ = 0.517, ωₙ = 1.93 rad/s → OS = 15%, tₛ = 4.06 s ✓ |
-| Day 3 | Root locus — RHP zeros | `rlocus()`, Routh-Hurwitz | K_critical = 1.5 confirmed analytically and graphically |
-| Day 3 | P controller — ABB IRB 1200 | Root locus design | K = 13.2 → OS reduced from 57% to 19.4%, tₛ from 7.31 s to 2.7 s |
-| Day 4 | PD+I controller design | Angle/magnitude condition | Compensator zero at −65.99, K = 121.5 → meets %OS = 20%, Tp = 0.198 s |
+| Day 2 | Pitch angle dynamics (aircraft) | 2nd-order approximation validity | Approximation **invalid** — zero at −0.435 only 3.84X from dominant poles (threshold: 5x) |
+| Day 2 | Active suspension: F1 context | `stepinfo()`, damping analysis | ζ = 0.517, ωₙ = 1.93 rad/s ; OS = 15%, tₛ = 4.06 s |
+| Day 3 | Root locus:RHP zeros | `rlocus()`, Routh-Hurwitz | K_critical = 1.5 confirmed analytically and graphically |
+| Day 3 | P controller: ABB IRB 1200 | Root locus design | K = 13.2; OS reduced from 57% to 19.4%, tₛ from 7.31 s to 2.7 s |
+| Day 4 | PD+I controller design | Angle/magnitude condition and Root Locus| Compensator zero at −65.99, K = 121.5; meets %OS = 20%, Tp = 0.198 s |
 
 ## Project Structure
 Currently, the repository has three folders: one for results ("results"), one for Matlab scripts ("Matlab"), and one for Simulink files ("Simulink"). The structure of this repository will likely change as progress is made.
@@ -52,7 +53,7 @@ Analyzed a third-order system and applied Nise's criterion: the second-order app
 
 ```
 Dominant poles:   s₁,₂ = −0.113 ± 0.0642i
-Neglected zero:   s = −0.435  →  ratio = 3.84  (threshold: 5.0)  ✗ Invalid
+Neglected zero:   s = −0.435  ;  ratio = 3.84  (threshold: 5.0)  (And for this, it's not rigth)
 ```
 
 **F1 active suspension — inverse design from specs:**
@@ -80,7 +81,7 @@ info = stepinfo(sys);
 G(s) = K(s − 2)(s − 4) / (s² + 6s + 25)
 ```
 
-Both zeros in the Right Half Plane → system becomes unstable for K > 1.5. Validated analytically using Routh-Hurwitz:
+Both zeros in the Right Half Plane, that's why the system becomes unstable for K > 1.5. Validated analytically using Routh-Hurwitz:
 
 ```
 Characteristic equation: s²(1+K) + s(6−4K) + (20K+8) = 0
@@ -143,7 +144,7 @@ The Matlab Livescript, is not available until the end of the week.
 
 Marcos Fierro · Mechatronics Engineering · Universidad Nacional de Colombia  
 Internship: SLB (Schlumberger) — Well Construction, Product Engineering · Jun–Dec 2025  
-Developed DASCF/InfoBits: automated drilling performance analytics tools (Python + Power BI) — 97% reduction in manual reporting time.
+Developed DASCF/InfoBits: automated drilling performance analytics tools (Python + Power BI) getting the 97% reduction in manual reporting time.
 
 [LinkedIn](https://linkedin.com/in/marcos-alfredo-fierro-sarria) · [GitHub](https://github.com/MarcosAlferoFierroSarria)
 
